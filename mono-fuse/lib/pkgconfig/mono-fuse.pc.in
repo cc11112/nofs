@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${pcfiledir}/../..
+libdir=@libdir@
+includedir=${prefix}/include
+assemblies_dir=${libdir}/mono-fuse
+Libraries=${assemblies_dir}/Mono.Fuse.dll
+ 
+Name: Mono.Fuse
+Description: C# Binding for FUSE
+Version: @VERSION@
+Requires: 
+Libs: -r:Mono.Fuse.dll -r:Mono.Posix.dll

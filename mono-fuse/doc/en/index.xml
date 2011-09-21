@@ -1,0 +1,25 @@
+<Overview>
+  <Assemblies>
+    <Assembly Name="Mono.Fuse" Version="0.0.0.0">
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=True)</AttributeName>
+        </Attribute>
+      </Attributes>
+    </Assembly>
+  </Assemblies>
+  <Remarks>
+    <see cref="N:Mono.Fuse" /> is a managed language binding for the FUSE
+    (File system in User Space) Linux kernel module.
+  </Remarks>
+  <Copyright>(C) 2006 Jonathan Pryor</Copyright>
+  <Types>
+    <Namespace Name="Mono.Fuse">
+      <Type Name="FileSystemOperationContext" />
+      <Type Name="OpenedPathInfo" />
+      <Type Name="FileSystem" />
+      <Type Name="DirectoryEntry" />
+    </Namespace>
+  </Types>
+  <Title>Mono.Fuse</Title>
+</Overview>
