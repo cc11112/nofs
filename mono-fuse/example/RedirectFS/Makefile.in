@@ -98,7 +98,6 @@ LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
-MCS = @MCS@
 MDASSEMBLER = @MDASSEMBLER@
 MFH_CFLAGS = @MFH_CFLAGS@
 MF_DIR = @MF_DIR@
@@ -130,7 +129,6 @@ PKG_CONFIG = @PKG_CONFIG@
 PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
 PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 RANLIB = @RANLIB@
-RUNTIME = @RUNTIME@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -202,10 +200,16 @@ REDIRECT_FS_FH_FILES = \
 	RedirectFS-FH.cs
 
 redirect_fs_fh_sources = $(addprefix $(srcdir)/, $(REDIRECT_FS_FH_FILES))
+EXTRA_DIST = \
+	$(redirect_fs_sources) \
+	$(srcdir)/redirectfs.in \
+	$(redirect_fs_fh_sources) \
+	$(srcdir)/redirectfs-fh.in
+
 REFS = -r:Mono.Fuse.dll -r:Mono.Posix.dll
 noinst_SCRIPTS = redirectfs redirectfs-fh
 abs_topbuilddir = $(shell cd $(top_builddir) && pwd)
-CLEANFILES = redirectfs redirectfs-fh Mono.Fuse.dll RedirectFS.exe
+CLEANFILES = redirectfs redirectfs-fh Mono.Fuse.dll RedirectFS.exe RedirectFS-FH.exe
 all: all-am
 
 .SUFFIXES:

@@ -71,8 +71,9 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 libMonoFuseHelper_la_DEPENDENCIES = $(am__DEPENDENCIES_2)
-am__objects_1 = mfh.lo mph.lo map.lo
-am_libMonoFuseHelper_la_OBJECTS = $(am__objects_1)
+am__objects_1 = mfh.lo mph.lo
+am__objects_2 = $(am__objects_1) map.lo
+am_libMonoFuseHelper_la_OBJECTS = $(am__objects_2)
 libMonoFuseHelper_la_OBJECTS = $(am_libMonoFuseHelper_la_OBJECTS)
 libMonoFuseHelper_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -144,7 +145,6 @@ LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
-MCS = @MCS@
 MDASSEMBLER = @MDASSEMBLER@
 MFH_CFLAGS = @MFH_CFLAGS@
 MF_DIR = @MF_DIR@
@@ -176,7 +176,6 @@ PKG_CONFIG = @PKG_CONFIG@
 PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
 PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 RANLIB = @RANLIB@
-RUNTIME = @RUNTIME@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -242,12 +241,16 @@ lib_LTLIBRARIES = libMonoFuseHelper.la
 INCLUDES = $(GLIB_CFLAGS) $(FUSE_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/lib
 AM_CFLAGS = $(MFH_CFLAGS) -DHAVE_STRUCT_FUSE_ARGS
 MFH_SOURCE = \
-	mfh.c \
-	mph.c \
+	$(srcdir)/mfh.c \
+	$(srcdir)/mph.c
+
+EXTRA_DIST = $(MFH_SOURCE)
+MFH_SOURCES = \
+	$(MFH_SOURCE) \
 	$(top_builddir)/lib/map.c
 
 MFH_LIBS = $(GLIB_LIBS) $(FUSE_LIBS)
-libMonoFuseHelper_la_SOURCES = $(MFH_SOURCE)
+libMonoFuseHelper_la_SOURCES = $(MFH_SOURCES)
 libMonoFuseHelper_la_LIBADD = $(MFH_LIBS)
 libMonoFuseHelper_la_LDFLAGS = -no-undefined -avoid-version
 buildlibdir = $(shell cd $(top_builddir)/lib && pwd)
@@ -354,6 +357,20 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+
+mfh.lo: $(srcdir)/mfh.c
+@am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT mfh.lo -MD -MP -MF $(DEPDIR)/mfh.Tpo -c -o mfh.lo `test -f '$(srcdir)/mfh.c' || echo '$(srcdir)/'`$(srcdir)/mfh.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/mfh.Tpo $(DEPDIR)/mfh.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$(srcdir)/mfh.c' object='mfh.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o mfh.lo `test -f '$(srcdir)/mfh.c' || echo '$(srcdir)/'`$(srcdir)/mfh.c
+
+mph.lo: $(srcdir)/mph.c
+@am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT mph.lo -MD -MP -MF $(DEPDIR)/mph.Tpo -c -o mph.lo `test -f '$(srcdir)/mph.c' || echo '$(srcdir)/'`$(srcdir)/mph.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/mph.Tpo $(DEPDIR)/mph.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$(srcdir)/mph.c' object='mph.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o mph.lo `test -f '$(srcdir)/mph.c' || echo '$(srcdir)/'`$(srcdir)/mph.c
 
 map.lo: $(top_builddir)/lib/map.c
 @am__fastdepCC_TRUE@	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT map.lo -MD -MP -MF $(DEPDIR)/map.Tpo -c -o map.lo `test -f '$(top_builddir)/lib/map.c' || echo '$(srcdir)/'`$(top_builddir)/lib/map.c
@@ -573,7 +590,7 @@ uninstall-am: uninstall-libLTLIBRARIES
 
 all: libMonoFuseHelper.la $(buildlibdir)/libMonoFuseHelper.so
 
-$(buildlibdir)/libMonoFuseHelper.so: $(MFH_SOURCE)
+$(buildlibdir)/libMonoFuseHelper.so: $(MFH_SOURCES)
 	$(LIBTOOL) --mode=install install -c libMonoFuseHelper.la $(buildlibdir)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -71,8 +71,9 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 libMonoFuseHelper_la_DEPENDENCIES = $(am__DEPENDENCIES_2)
-am__objects_1 = mfh.lo mph.lo map.lo
-am_libMonoFuseHelper_la_OBJECTS = $(am__objects_1)
+am__objects_1 = mfh.lo mph.lo
+am__objects_2 = $(am__objects_1) map.lo
+am_libMonoFuseHelper_la_OBJECTS = $(am__objects_2)
 libMonoFuseHelper_la_OBJECTS = $(am_libMonoFuseHelper_la_OBJECTS)
 libMonoFuseHelper_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -95,13 +96,13 @@ DIST_SOURCES = $(libMonoFuseHelper_la_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run tar
+ACLOCAL = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run tar
 AR = ar
-ASSEMBLY_VERSION = 0.1.0.0
-AUTOCONF = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run automake-1.11
+ASSEMBLY_VERSION = 0.4.3.0
+AUTOCONF = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run automake-1.11
 AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -109,7 +110,7 @@ CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CSC = /usr/bin/gmcs
-CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS -d:HAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -143,10 +144,9 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run makeinfo
-MCS = /usr/bin/gmcs
+MAKEINFO = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run makeinfo
 MDASSEMBLER = /usr/bin/mdassembler
-MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS -DHAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 MF_DIR = $(prefix)/lib/mono-fuse
 MKDIR_P = /bin/mkdir -p
 MONO = /usr/bin/mono
@@ -166,26 +166,25 @@ OTOOL64 =
 PACKAGE = mono-fuse
 PACKAGE_BUGREPORT = jonpryor@vt.edu
 PACKAGE_NAME = mono-fuse
-PACKAGE_STRING = mono-fuse 0.1
+PACKAGE_STRING = mono-fuse 0.4.3
 PACKAGE_TARNAME = mono-fuse
 PACKAGE_URL = 
-PACKAGE_VERSION = 0.1
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PACKAGE_VERSION = 0.4.3
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/gradle-1.0/bin
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
 RANLIB = ranlib
-RUNTIME = /usr/bin/mono
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 0.1
-abs_builddir = /home/cpxx/Projects/mono-fuse-0.4.2/src/MonoFuseHelper
-abs_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2/src/MonoFuseHelper
-abs_top_builddir = /home/cpxx/Projects/mono-fuse-0.4.2
-abs_top_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2
+VERSION = 0.4.3
+abs_builddir = /home/crane/git/nofs/mono-fuse/src/MonoFuseHelper
+abs_srcdir = /home/crane/git/nofs/mono-fuse/src/MonoFuseHelper
+abs_top_builddir = /home/crane/git/nofs/mono-fuse
+abs_top_srcdir = /home/crane/git/nofs/mono-fuse
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -213,7 +212,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/install-sh
+install_sh = ${SHELL} /home/crane/git/nofs/mono-fuse/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -242,12 +241,16 @@ lib_LTLIBRARIES = libMonoFuseHelper.la
 INCLUDES = $(GLIB_CFLAGS) $(FUSE_CFLAGS) -I$(top_srcdir) -I$(top_builddir)/lib
 AM_CFLAGS = $(MFH_CFLAGS) -DHAVE_STRUCT_FUSE_ARGS
 MFH_SOURCE = \
-	mfh.c \
-	mph.c \
+	$(srcdir)/mfh.c \
+	$(srcdir)/mph.c
+
+EXTRA_DIST = $(MFH_SOURCE)
+MFH_SOURCES = \
+	$(MFH_SOURCE) \
 	$(top_builddir)/lib/map.c
 
 MFH_LIBS = $(GLIB_LIBS) $(FUSE_LIBS)
-libMonoFuseHelper_la_SOURCES = $(MFH_SOURCE)
+libMonoFuseHelper_la_SOURCES = $(MFH_SOURCES)
 libMonoFuseHelper_la_LIBADD = $(MFH_LIBS)
 libMonoFuseHelper_la_LDFLAGS = -no-undefined -avoid-version
 buildlibdir = $(shell cd $(top_builddir)/lib && pwd)
@@ -354,6 +357,20 @@ include ./$(DEPDIR)/mph.Plo
 #	source='$<' object='$@' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(LTCOMPILE) -c -o $@ $<
+
+mfh.lo: $(srcdir)/mfh.c
+	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT mfh.lo -MD -MP -MF $(DEPDIR)/mfh.Tpo -c -o mfh.lo `test -f '$(srcdir)/mfh.c' || echo '$(srcdir)/'`$(srcdir)/mfh.c
+	$(am__mv) $(DEPDIR)/mfh.Tpo $(DEPDIR)/mfh.Plo
+#	source='$(srcdir)/mfh.c' object='mfh.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o mfh.lo `test -f '$(srcdir)/mfh.c' || echo '$(srcdir)/'`$(srcdir)/mfh.c
+
+mph.lo: $(srcdir)/mph.c
+	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT mph.lo -MD -MP -MF $(DEPDIR)/mph.Tpo -c -o mph.lo `test -f '$(srcdir)/mph.c' || echo '$(srcdir)/'`$(srcdir)/mph.c
+	$(am__mv) $(DEPDIR)/mph.Tpo $(DEPDIR)/mph.Plo
+#	source='$(srcdir)/mph.c' object='mph.lo' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o mph.lo `test -f '$(srcdir)/mph.c' || echo '$(srcdir)/'`$(srcdir)/mph.c
 
 map.lo: $(top_builddir)/lib/map.c
 	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT map.lo -MD -MP -MF $(DEPDIR)/map.Tpo -c -o map.lo `test -f '$(top_builddir)/lib/map.c' || echo '$(srcdir)/'`$(top_builddir)/lib/map.c
@@ -573,7 +590,7 @@ uninstall-am: uninstall-libLTLIBRARIES
 
 all: libMonoFuseHelper.la $(buildlibdir)/libMonoFuseHelper.so
 
-$(buildlibdir)/libMonoFuseHelper.so: $(MFH_SOURCE)
+$(buildlibdir)/libMonoFuseHelper.so: $(MFH_SOURCES)
 	$(LIBTOOL) --mode=install install -c libMonoFuseHelper.la $(buildlibdir)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

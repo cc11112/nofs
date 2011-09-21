@@ -59,10 +59,6 @@ namespace Mono.Fuse.Samples {
 		}
 
 		protected override Errno OnGetPathStatus (string path, out Stat stbuf)
-<<<<<<< HEAD
-
-=======
->>>>>>> 40c089e8d6db4dd7bf6c8ffc73dd1108406bddcf
 		{
 			Trace.WriteLine ("(OnGetPathStatus {0})", path);
 

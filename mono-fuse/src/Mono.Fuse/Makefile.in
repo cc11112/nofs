@@ -36,14 +36,15 @@ build_triplet = @build@
 host_triplet = @host@
 target_triplet = @target@
 subdir = src/Mono.Fuse
-DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+DIST_COMMON = $(srcdir)/AssemblyInfo.cs.in $(srcdir)/Makefile.am \
+	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = AssemblyInfo.cs
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -120,7 +121,6 @@ LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
-MCS = @MCS@
 MDASSEMBLER = @MDASSEMBLER@
 MFH_CFLAGS = @MFH_CFLAGS@
 MF_DIR = @MF_DIR@
@@ -152,7 +152,6 @@ PKG_CONFIG = @PKG_CONFIG@
 PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
 PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 RANLIB = @RANLIB@
-RUNTIME = @RUNTIME@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -216,10 +215,12 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 FILES = \
 	MapAttribute.cs \
+	AssemblyInfo.cs \
 	Mono.Fuse/FileSystem.cs \
 	Mono.Fuse/FileNameMarshaler.cs
 
 build_sources = $(addprefix $(srcdir)/, $(FILES))
+EXTRA_DIST = $(build_sources) create-native-map.exe
 DLL = $(top_builddir)/lib/mono-fuse/Mono.Fuse.dll
 REFS = -r:Mono.Posix.dll
 map_p = $(top_builddir)/lib/map
@@ -260,6 +261,8 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
+AssemblyInfo.cs: $(top_builddir)/config.status $(srcdir)/AssemblyInfo.cs.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -444,7 +447,7 @@ $(DLL) : $(build_sources)
 
 $(map_files) : $(DLL)
 	mono $(srcdir)/create-native-map.exe  \
-		--impl-macro:FUSE_USE_VERSION=25    \
+		--impl-macro:FUSE_USE_VERSION=26    \
 		--impl-header:"<fuse.h>"            \
 		--library=MonoFuseHelper            \
 		--rename-member:st_atime=st_atime_  \

@@ -98,7 +98,6 @@ LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
-MCS = @MCS@
 MDASSEMBLER = @MDASSEMBLER@
 MFH_CFLAGS = @MFH_CFLAGS@
 MF_DIR = @MF_DIR@
@@ -130,7 +129,6 @@ PKG_CONFIG = @PKG_CONFIG@
 PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
 PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 RANLIB = @RANLIB@
-RUNTIME = @RUNTIME@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -197,10 +195,11 @@ FILES = \
 	HelloFS.cs
 
 build_sources = $(addprefix $(srcdir)/, $(FILES))
+EXTRA_DIST = $(build_sources) $(srcdir)/hellofs.in
 REFS = -r:Mono.Fuse.dll -r:Mono.Posix.dll
 noinst_SCRIPTS = hellofs
 abs_topbuilddir = $(shell cd $(top_builddir) && pwd)
-CLEANFILES = hellofs Mono.Fuse.dll HelloFS.exe
+CLEANFILES = hellofs Mono.Fuse.dll HelloFS.exe Mono.Fuse.dll.mdb HelloFS.exe.mdb
 all: all-am
 
 .SUFFIXES:

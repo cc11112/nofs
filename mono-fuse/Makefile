@@ -37,8 +37,9 @@ target_triplet = i686-pc-linux-gnu
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
-	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
-	config.guess config.sub depcomp install-sh ltmain.sh missing
+	$(srcdir)/mono-fuse.spec.in $(top_srcdir)/configure AUTHORS \
+	COPYING ChangeLog INSTALL NEWS config.guess config.sub depcomp \
+	install-sh ltmain.sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -47,7 +48,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = mono-fuse.spec
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -102,13 +103,13 @@ DIST_ARCHIVES = $(distdir).tar.gz
 GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run tar
+ACLOCAL = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run tar
 AR = ar
-ASSEMBLY_VERSION = 0.1.0.0
-AUTOCONF = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run automake-1.11
+ASSEMBLY_VERSION = 0.4.3.0
+AUTOCONF = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run automake-1.11
 AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -116,7 +117,7 @@ CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CSC = /usr/bin/gmcs
-CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS -d:HAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -150,10 +151,9 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run makeinfo
-MCS = /usr/bin/gmcs
+MAKEINFO = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run makeinfo
 MDASSEMBLER = /usr/bin/mdassembler
-MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS -DHAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 MF_DIR = $(prefix)/lib/mono-fuse
 MKDIR_P = /bin/mkdir -p
 MONO = /usr/bin/mono
@@ -173,26 +173,25 @@ OTOOL64 =
 PACKAGE = mono-fuse
 PACKAGE_BUGREPORT = jonpryor@vt.edu
 PACKAGE_NAME = mono-fuse
-PACKAGE_STRING = mono-fuse 0.1
+PACKAGE_STRING = mono-fuse 0.4.3
 PACKAGE_TARNAME = mono-fuse
 PACKAGE_URL = 
-PACKAGE_VERSION = 0.1
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PACKAGE_VERSION = 0.4.3
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/gradle-1.0/bin
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
 RANLIB = ranlib
-RUNTIME = /usr/bin/mono
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 0.1
-abs_builddir = /home/cpxx/Projects/mono-fuse-0.4.2
-abs_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2
-abs_top_builddir = /home/cpxx/Projects/mono-fuse-0.4.2
-abs_top_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2
+VERSION = 0.4.3
+abs_builddir = /home/crane/git/nofs/mono-fuse
+abs_srcdir = /home/crane/git/nofs/mono-fuse
+abs_top_builddir = /home/crane/git/nofs/mono-fuse
+abs_top_srcdir = /home/crane/git/nofs/mono-fuse
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -220,7 +219,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/install-sh
+install_sh = ${SHELL} /home/crane/git/nofs/mono-fuse/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -301,6 +300,8 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
+mono-fuse.spec: $(top_builddir)/config.status $(srcdir)/mono-fuse.spec.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -740,6 +741,17 @@ uninstall-am:
 	mostlyclean mostlyclean-generic mostlyclean-libtool pdf pdf-am \
 	ps ps-am tags tags-recursive uninstall uninstall-am
 
+
+rpm:
+	tgz=$(DIST_ARCHIVES); \
+	if [ ! -e $(DIST_ARCHIVES) ] ; then tgz=archive/$(DIST_ARCHIVES) ; fi ; \
+	cp $$tgz /usr/src/packages/SOURCES/$(DIST_ARCHIVES) && \
+		rpmbuild -bb mono-fuse.spec && \
+		cp /usr/src/packages/RPMS/*/$(distdir)*.rpm archive
+
+prepare-release:
+	$(MAKE) distcheck
+	mv $(DIST_ARCHIVES) archive
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

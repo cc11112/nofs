@@ -36,14 +36,15 @@ build_triplet = i686-pc-linux-gnu
 host_triplet = i686-pc-linux-gnu
 target_triplet = i686-pc-linux-gnu
 subdir = src/Mono.Fuse
-DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+DIST_COMMON = $(srcdir)/AssemblyInfo.cs.in $(srcdir)/Makefile.am \
+	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = AssemblyInfo.cs
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -71,13 +72,13 @@ am__base_list = \
 am__installdirs = "$(DESTDIR)$(assemblydir)"
 DATA = $(assembly_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run tar
+ACLOCAL = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run tar
 AR = ar
-ASSEMBLY_VERSION = 0.1.0.0
-AUTOCONF = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run automake-1.11
+ASSEMBLY_VERSION = 0.4.3.0
+AUTOCONF = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run automake-1.11
 AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -85,7 +86,7 @@ CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CSC = /usr/bin/gmcs
-CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+CSC_FLAGS =  -d:HAVE_MONO_UNIX_NATIVE_COPY_FUNCS -d:HAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -119,10 +120,9 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/missing --run makeinfo
-MCS = /usr/bin/gmcs
+MAKEINFO = ${SHELL} /home/crane/git/nofs/mono-fuse/missing --run makeinfo
 MDASSEMBLER = /usr/bin/mdassembler
-MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS
+MFH_CFLAGS = -DHAVE_MONO_UNIX_NATIVE_COPY_FUNCS -DHAVE_MONO_UNIX_NATIVE_COPY_FLOCK
 MF_DIR = $(prefix)/lib/mono-fuse
 MKDIR_P = /bin/mkdir -p
 MONO = /usr/bin/mono
@@ -142,26 +142,25 @@ OTOOL64 =
 PACKAGE = mono-fuse
 PACKAGE_BUGREPORT = jonpryor@vt.edu
 PACKAGE_NAME = mono-fuse
-PACKAGE_STRING = mono-fuse 0.1
+PACKAGE_STRING = mono-fuse 0.4.3
 PACKAGE_TARNAME = mono-fuse
 PACKAGE_URL = 
-PACKAGE_VERSION = 0.1
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PACKAGE_VERSION = 0.4.3
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/gradle-1.0/bin
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
 RANLIB = ranlib
-RUNTIME = /usr/bin/mono
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 0.1
-abs_builddir = /home/cpxx/Projects/mono-fuse-0.4.2/src/Mono.Fuse
-abs_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2/src/Mono.Fuse
-abs_top_builddir = /home/cpxx/Projects/mono-fuse-0.4.2
-abs_top_srcdir = /home/cpxx/Projects/mono-fuse-0.4.2
+VERSION = 0.4.3
+abs_builddir = /home/crane/git/nofs/mono-fuse/src/Mono.Fuse
+abs_srcdir = /home/crane/git/nofs/mono-fuse/src/Mono.Fuse
+abs_top_builddir = /home/crane/git/nofs/mono-fuse
+abs_top_srcdir = /home/crane/git/nofs/mono-fuse
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -189,7 +188,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/cpxx/Projects/mono-fuse-0.4.2/install-sh
+install_sh = ${SHELL} /home/crane/git/nofs/mono-fuse/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -216,10 +215,12 @@ top_builddir = ../..
 top_srcdir = ../..
 FILES = \
 	MapAttribute.cs \
+	AssemblyInfo.cs \
 	Mono.Fuse/FileSystem.cs \
 	Mono.Fuse/FileNameMarshaler.cs
 
 build_sources = $(addprefix $(srcdir)/, $(FILES))
+EXTRA_DIST = $(build_sources) create-native-map.exe
 DLL = $(top_builddir)/lib/mono-fuse/Mono.Fuse.dll
 REFS = -r:Mono.Posix.dll
 map_p = $(top_builddir)/lib/map
@@ -260,6 +261,8 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
+AssemblyInfo.cs: $(top_builddir)/config.status $(srcdir)/AssemblyInfo.cs.in
+	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -444,7 +447,7 @@ $(DLL) : $(build_sources)
 
 $(map_files) : $(DLL)
 	mono $(srcdir)/create-native-map.exe  \
-		--impl-macro:FUSE_USE_VERSION=25    \
+		--impl-macro:FUSE_USE_VERSION=26    \
 		--impl-header:"<fuse.h>"            \
 		--library=MonoFuseHelper            \
 		--rename-member:st_atime=st_atime_  \
