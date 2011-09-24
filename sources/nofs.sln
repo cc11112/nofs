@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Souce", "Souce", "{0838E8C5-EAD0-4CF7-8B86-4852F50369B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{F9D80091-185C-4EC5-89AE-3AF52B3F9C67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{0E15B016-FDE9-47C3-9713-3BD717915EDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mono", "mono", "{11507EAF-5FF3-4998-B983-1A3C35F4A88E}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\mono\Mono.Posix.dll = ..\libs\mono\Mono.Posix.dll
+		..\libs\mono\MonoPosixHelper.dll = ..\libs\mono\MonoPosixHelper.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nunit", "nunit", "{4201B314-C298-47DA-A45A-C4FD5ABC4137}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\NUnit\nunit-console-runner.dll = ..\libs\NUnit\nunit-console-runner.dll
+		..\libs\NUnit\nunit-gui-runner.dll = ..\libs\NUnit\nunit-gui-runner.dll
+		..\libs\NUnit\nunit-gui.tests.dll = ..\libs\NUnit\nunit-gui.tests.dll
+		..\libs\NUnit\nunit.core.dll = ..\libs\NUnit\nunit.core.dll
+		..\libs\NUnit\nunit.core.extensions.dll = ..\libs\NUnit\nunit.core.extensions.dll
+		..\libs\NUnit\nunit.core.interfaces.dll = ..\libs\NUnit\nunit.core.interfaces.dll
+		..\libs\NUnit\nunit.core.tests.dll = ..\libs\NUnit\nunit.core.tests.dll
+		..\libs\NUnit\nunit.extensions.tests.dll = ..\libs\NUnit\nunit.extensions.tests.dll
+		..\libs\NUnit\nunit.framework.dll = ..\libs\NUnit\nunit.framework.dll
+		..\libs\NUnit\nunit.framework.extensions.dll = ..\libs\NUnit\nunit.framework.extensions.dll
+		..\libs\NUnit\nunit.framework.tests.dll = ..\libs\NUnit\nunit.framework.tests.dll
+		..\libs\NUnit\nunit.framework.xml = ..\libs\NUnit\nunit.framework.xml
+		..\libs\NUnit\nunit.mocks.tests.dll = ..\libs\NUnit\nunit.mocks.tests.dll
+		..\libs\NUnit\nunit.uiexception.dll = ..\libs\NUnit\nunit.uiexception.dll
+		..\libs\NUnit\nunit.uikit.dll = ..\libs\NUnit\nunit.uikit.dll
+		..\libs\NUnit\nunit.uikit.tests.dll = ..\libs\NUnit\nunit.uikit.tests.dll
+		..\libs\NUnit\nunit.util.dll = ..\libs\NUnit\nunit.util.dll
+		..\libs\NUnit\nunit.util.tests.dll = ..\libs\NUnit\nunit.util.tests.dll
+		..\libs\NUnit\README.txt = ..\libs\NUnit\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "log4net", "log4net", "{7B441020-9739-4F53-855F-005A6EA4C615}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\log4net\log4net.dll = ..\libs\log4net\log4net.dll
+		..\libs\log4net\log4net.xml = ..\libs\log4net\log4net.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mono.fuse", "mono.fuse", "{9BF11292-D4E2-4F79-8D1E-A658C61E42C2}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\mono.fuse\Mono.Fuse.dll = ..\libs\mono.fuse\Mono.Fuse.dll
+		..\libs\mono.fuse\Mono.Fuse.dll.mdb = ..\libs\mono.fuse\Mono.Fuse.dll.mdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dokan", "dokan", "{0082D43C-263B-44A4-8F46-8222003FF0E2}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\dokan\DokanNet.dll = ..\libs\dokan\DokanNet.dll
+		..\libs\dokan\DokanNet.pdb = ..\libs\dokan\DokanNet.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "javapi", "javapi", "{7549BF1F-A028-4FC7-B670-AEB4E6C2E3BF}"
+	ProjectSection(SolutionItems) = preProject
+		..\libs\javapi\JavApi.dll = ..\libs\javapi\JavApi.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nofs.fuse.test", "..\UnitTests\nofs.fuse.test\nofs.fuse.test.csproj", "{1BD71845-BA66-4913-A8ED-A99D8E839343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nofs.Net", "nofs.win32\Nofs.Net.csproj", "{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nofs.Fuse", "nofs.fuse\Nofs.Fuse.csproj", "{5AB60703-2538-466B-8D14-0E85D9F9F951}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Debug|x86.ActiveCfg = Debug|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Debug|x86.Build.0 = Debug|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Release|Any CPU.ActiveCfg = Release|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Release|Mixed Platforms.Build.0 = Release|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Release|x86.ActiveCfg = Release|x86
+		{1BD71845-BA66-4913-A8ED-A99D8E839343}.Release|x86.Build.0 = Release|x86
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368}.Release|x86.ActiveCfg = Release|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5AB60703-2538-466B-8D14-0E85D9F9F951}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77635076-C8B5-4CC2-A4DF-AABFB4E7F368} = {0838E8C5-EAD0-4CF7-8B86-4852F50369B3}
+		{5AB60703-2538-466B-8D14-0E85D9F9F951} = {0838E8C5-EAD0-4CF7-8B86-4852F50369B3}
+		{11507EAF-5FF3-4998-B983-1A3C35F4A88E} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{4201B314-C298-47DA-A45A-C4FD5ABC4137} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{7B441020-9739-4F53-855F-005A6EA4C615} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{9BF11292-D4E2-4F79-8D1E-A658C61E42C2} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{0082D43C-263B-44A4-8F46-8222003FF0E2} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{7549BF1F-A028-4FC7-B670-AEB4E6C2E3BF} = {F9D80091-185C-4EC5-89AE-3AF52B3F9C67}
+		{1BD71845-BA66-4913-A8ED-A99D8E839343} = {0E15B016-FDE9-47C3-9713-3BD717915EDF}
+	EndGlobalSection
+EndGlobal
