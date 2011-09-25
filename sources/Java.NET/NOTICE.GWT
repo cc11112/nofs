@@ -1,3 +1,0 @@
-Parts of framework are ported from GOOGLE Web Toolkit:
-
--- At the moment included parts are replaced by Apache Harmony implementations, because TreeMap does not implement NavigableMap --
