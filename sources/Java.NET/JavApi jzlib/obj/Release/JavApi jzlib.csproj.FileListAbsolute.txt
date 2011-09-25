@@ -1,7 +1,0 @@
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\bin\Release\JavApi jzlib.dll
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\bin\Release\JavApi jzlib.pdb
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\bin\Release\JavApi.dll
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\bin\Release\JavApi.pdb
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\obj\Release\ResolveAssemblyReference.cache
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\obj\Release\JavApi jzlib.dll
-C:\Users\schen2\Downloads\trunk\JavApi jzlib\obj\Release\JavApi jzlib.pdb

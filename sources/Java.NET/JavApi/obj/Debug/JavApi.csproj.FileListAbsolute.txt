@@ -1,6 +1,0 @@
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\bin\Debug\JavApi.dll
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\bin\Debug\JavApi.pdb
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\bin\Debug\JavApiDoc.xml
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\obj\Debug\ResolveAssemblyReference.cache
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\obj\Debug\JavApi.dll
-C:\Work\luc\course\IndenpendPrj\nofs\sources\Java.NET\JavApi\obj\Debug\JavApi.pdb

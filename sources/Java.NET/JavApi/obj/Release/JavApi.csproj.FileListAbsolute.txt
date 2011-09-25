@@ -1,6 +1,0 @@
-C:\Users\schen2\Downloads\trunk\JavApi\bin\Release\JavApi.dll
-C:\Users\schen2\Downloads\trunk\JavApi\bin\Release\JavApi.pdb
-C:\Users\schen2\Downloads\trunk\JavApi\bin\Release\JavApiDoc.xml
-C:\Users\schen2\Downloads\trunk\JavApi\obj\Release\ResolveAssemblyReference.cache
-C:\Users\schen2\Downloads\trunk\JavApi\obj\Release\JavApi.dll
-C:\Users\schen2\Downloads\trunk\JavApi\obj\Release\JavApi.pdb
