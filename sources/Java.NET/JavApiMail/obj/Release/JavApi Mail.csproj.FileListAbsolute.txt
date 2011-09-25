@@ -1,0 +1,5 @@
+C:\Users\schen2\Downloads\trunk\JavApiMail\bin\Release\JavApiMail.dll
+C:\Users\schen2\Downloads\trunk\JavApiMail\bin\Release\JavApi.dll
+C:\Users\schen2\Downloads\trunk\JavApiMail\bin\Release\JavApi.pdb
+C:\Users\schen2\Downloads\trunk\JavApiMail\obj\Release\ResolveAssemblyReference.cache
+C:\Users\schen2\Downloads\trunk\JavApiMail\obj\Release\JavApiMail.dll

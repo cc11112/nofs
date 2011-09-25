@@ -25,8 +25,9 @@ namespace Nofs.Fuse
 
 
         public Filesystem3ToFuseFSAdapter(Filesystem3 fs3, ILog log)
-            :this(fs3, Encoding.GetEncoding("UTF-8").EncodingName, log)
+            : this(fs3, SystemJ.getProperty("file.encoding", "UTF-8"), log)
         {
+            
         }
 
         public Filesystem3ToFuseFSAdapter(Filesystem3 fs3, String encoding, ILog log)

@@ -1,0 +1,11 @@
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\SampleJavApi.exe
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\SampleJavApi.pdb
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\JavApi jzlib.dll
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\JavApi.dll
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\JavApiMail.dll
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\JavApi jzlib.pdb
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\JavApi.pdb
+C:\Users\schen2\Downloads\trunk\JavApiSamples\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\schen2\Downloads\trunk\JavApiSamples\obj\x86\Release\SampleJavApi.exe
+C:\Users\schen2\Downloads\trunk\JavApiSamples\obj\x86\Release\SampleJavApi.pdb
+C:\Users\schen2\Downloads\trunk\JavApiSamples\bin\Release\SampleJavApi.exe.config

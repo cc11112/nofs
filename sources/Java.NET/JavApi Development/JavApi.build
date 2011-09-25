@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-15'?>
+
+<project name='JavApi' default='all'>
+  <target name='all' description='Build full projects'>
+    <echo message='Build JavApi solution' />
+	<msbuild project='../J.net.sln'>
+      <arg value='/property:Configuration=debug' />
+	  <arg value='/p:Platform="Any CPU"' />
+	  <arg value='/p:DocumentationFile=' />
+	  <arg value='/t:Rebuild' />
+	</msbuild>
+  </target>
+  
+  <target name='core' description='Build only JavApi core'>
+	<msbuild project='../JavApi/JavApi.csproj'>
+      <arg value='/property:Configuration=Debug' />
+	  <arg value='/p:Platform="Any CPU"' />
+	  <arg value='/p:OutputPath="./bin/Debug"' />
+	  <arg value='/p:DocumentationFile=' />
+	  <arg value='/t:Rebuild' />
+	</msbuild>
+  </target>
+
+</project>
