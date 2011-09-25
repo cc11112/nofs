@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Threading;
+using biz.ritter.javapi.lang;
+using javapi.lang;
 using log4net;
 using Nofs.Fuse.Compat;
-using Nofs.Fuse.Java;
 
 
 namespace Nofs.Fuse
 {
-
-
     public class FuseMount
     {
         private static ILog log = LogManager.GetLogger(typeof(FuseMount));
 
-
-        //static
-        //{
-        //   System.loadLibrary("javafs");
-        //}
+        static FuseMount()
+        {
+            //TODO:
+            //SystemJ.loadLibrary("javafs");
+        }
 
         private FuseMount()
         {
@@ -54,7 +52,7 @@ namespace Nofs.Fuse
 
         public static void mount(String[] args, FuseFS fuseFS)// throws FuseException
         {
-            ThreadGroup threadGroup = new ThreadGroup(Thread.CurrentThread.ManagedThreadId, "FUSE Threads");
+            ThreadGroup threadGroup = new ThreadGroup("FUSE Threads");
             threadGroup.setDaemon(true);
 
             log.Info("Mounting filesystem");
@@ -72,7 +70,7 @@ namespace Nofs.Fuse
                 threadGroup.enumerate(threads);
                 for (int i = 0; i < threads.Length; i++)
                 {
-                    log.Debug("thread[" + i + "] = " + threads[i] + ", isDaemon = " /*+ threads[i].isDaemon() */);
+                    log.Debug("thread[" + i + "] = " + threads[i] + ", isDaemon = " + threads[i].isDaemon() );
                 }
             }
         }

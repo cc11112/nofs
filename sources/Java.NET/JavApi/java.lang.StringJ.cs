@@ -143,7 +143,6 @@ namespace biz.ritter.javapi.lang
         /// <summary>
         /// Check string instance for matching giving regular expression.
         /// </summary>
-        /// <param name="str">instance</param>
         /// <param name="expr">regular expression</param>
         /// <returns></returns>
         public bool matches(String expr)

@@ -65,19 +65,21 @@ namespace biz.ritter.javapi.beans
             }
             return beanDescriptor;
         }
-    class PropertyComparator :
-            java.util.Comparator<PropertyDescriptor> {
-        public int compare(PropertyDescriptor object1,
-                PropertyDescriptor object2) {
-            return object1.getName().compareTo(object2.getName());
-        }
-        public bool equals(Object o)
+        class PropertyComparator :
+                java.util.Comparator<PropertyDescriptor>
         {
-            return this == o;
+            public int compare(PropertyDescriptor object1,
+                    PropertyDescriptor object2)
+            {
+                return object1.getName().compareTo(object2.getName());
+            }
+            public bool equals(Object o)
+            {
+                return this == o;
+            }
         }
-    }
 
-        // TODO
+
         internal void init()
         {
             if (this.events == null)

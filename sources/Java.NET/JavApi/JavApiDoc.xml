@@ -11241,7 +11241,6 @@
             <summary>
             Check string instance for matching giving regular expression.
             </summary>
-            <param name="str">instance</param>
             <param name="expr">regular expression</param>
             <returns></returns>
         </member>
@@ -13182,9 +13181,9 @@
             <summary>
             The CRC32 class is used to compute a CRC32 checksum from data provided as
             input value.
-            </summary>
             <see cref="!:http://issues.apache.org/jira/browse/HADOOP-6148"/>
             <see cref="!:http://www.codeplex.com/npoi"/>
+            </summary>
         </member>
         <member name="M:biz.ritter.javapi.util.zip.CRC32.getValue">
             <summary>

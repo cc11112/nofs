@@ -100,10 +100,18 @@ namespace biz.ritter.javapi.io
 
         private static IEnumerable<string> EnumerateFileSystemEntries(string path)
         {
-            //TODO:
             //Returns an enumerable collection of file-system entries in a specified path.
-            //System.IO.Directory.EnumerateFileSystemEntries
-            throw new NotImplementedException();
+
+#if DOTNET_FRAMEWORK_4
+            return System.IO.Directory.EnumerateFileSystemEntries(path);
+#else
+            List<string> list = new List<string>();
+
+            list.AddRange(System.IO.Directory.GetDirectories(path));
+            list.AddRange(System.IO.Directory.GetFiles(path));
+            
+            return list;
+#endif
         }
 
         public String[] list()

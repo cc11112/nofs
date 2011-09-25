@@ -81,6 +81,7 @@
     <Compile Include="Filesystem3.cs" />
     <Compile Include="Filesystem3ToFuseFSAdapter.cs" />
     <Compile Include="FilesystemConstants.cs" />
+    <Compile Include="FuseContext.cs" />
     <Compile Include="FuseDirFiller.cs" />
     <Compile Include="FuseException.cs" />
     <Compile Include="FuseFillDir.cs" />
@@ -90,15 +91,19 @@
     <Compile Include="FuseFSFillDir.cs" />
     <Compile Include="FuseFtype.cs" />
     <Compile Include="FuseFtypeConstants.cs" />
+    <Compile Include="FuseGetattr.cs" />
     <Compile Include="FuseGetattrSetter.cs" />
     <Compile Include="FuseMount.cs" />
+    <Compile Include="FuseOpen.cs" />
+    <Compile Include="FuseOpendir.cs" />
+    <Compile Include="FuseOpendirSetter.cs" />
     <Compile Include="FuseOpenSetter.cs" />
     <Compile Include="FuseSize.cs" />
     <Compile Include="FuseSizeSetter.cs" />
     <Compile Include="FuseStatConstants.cs" />
     <Compile Include="FuseStatfs.cs" />
     <Compile Include="FuseStatfsSetter.cs" />
-    <Compile Include="Java\ThreadGroup.cs" />
+    <Compile Include="Java\java.lang\ThreadGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Struct.cs" />
     <Compile Include="XattrLister.cs" />
@@ -127,6 +132,7 @@
       <Name>JavApi</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

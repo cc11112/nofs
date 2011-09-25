@@ -21,9 +21,9 @@ namespace biz.ritter.javapi.util.zip
     ///<summary>
     ///The CRC32 class is used to compute a CRC32 checksum from data provided as
     ///input value.
-    ///</summary>
     ///<see cref="http://issues.apache.org/jira/browse/HADOOP-6148"/>
     ///<see cref="http://www.codeplex.com/npoi"/>
+    ///</summary>
     public class CRC32 : HashAlgorithm, java.util.zip.Checksum {
 
         private static readonly int [] datastream = {1,0,0,0,1,1,0,0};

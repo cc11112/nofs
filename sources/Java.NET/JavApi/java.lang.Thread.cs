@@ -20,10 +20,16 @@ namespace biz.ritter.javapi.lang
 {
     public class Thread : Runnable 
     {
-
         private Runnable runnable;
         System.Threading.Thread delegateInstance;
 
+        public int ManagedThreadId
+        {
+            get
+            {
+                return delegateInstance == null ? 0 : delegateInstance.ManagedThreadId;
+            }
+        }
         /// <summary>
         /// Set the name of Thread instance to newName
         /// </summary>
